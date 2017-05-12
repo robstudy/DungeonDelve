@@ -78,6 +78,28 @@ public class BinaryTree<T extends Comparable<? super T>> {
 		}
 	}
 
+	public boolean search_tree(T s_data) {
+		if(root == null) return false;
+		else if (size == 1 && s_data != root.get_data()) return false;
+		else return search(s_data, root);
+	}
+
+	private boolean search(T s_data, Node ptr) {
+		if(ptr == null) return false;
+		if(s_data == ptr.get_data()) {
+			System.out.println("Found " + s_data + ". Retrace your steps to the entrance.");
+			return true;
+		}
+		int comparison = ptr.data.compareTo(s_data);
+		if(comparison > 0) {
+			System.out.println("Take the left door at the " + ptr.get_data() + ".");
+			return search(s_data, ptr.get_left());
+		} else {
+			System.out.println("Take the right door at the " + ptr.get_data() + "."); 
+			return search(s_data, ptr.get_right());
+		}
+	}
+
 	public void print() {
 		System.out.println("Placeholder");
 	}

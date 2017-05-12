@@ -100,7 +100,15 @@ public class BinaryTree<T extends Comparable<? super T>> {
 		}
 	}
 
-	public void print() {
-		System.out.println("Placeholder");
+	public void print_tree() {
+		if(root != null) System.out.println(root.get_data());
+		if(root.get_left() != null) print_node(root.getleft());
+		if(root.get_right() != null) print_node(root.get_right());
+	}
+
+	private void print_node(Node ptr) {
+		System.out.println(ptr.get_data());
+		if(ptr.get_left() != null) print_node(ptr.get_left());
+		if(ptr.get_right() != null) print_node(ptr.get_right());
 	}
 }

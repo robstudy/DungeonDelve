@@ -102,7 +102,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
 
 	public void print_tree() {
 		if(root != null) System.out.println(root.get_data());
-		if(root.get_left() != null) print_node(root.getleft());
+		if(root.get_left() != null) print_node(root.get_left());
 		if(root.get_right() != null) print_node(root.get_right());
 	}
 

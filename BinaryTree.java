@@ -1,5 +1,7 @@
+//Generic class must extend Comparable for operators
 public class BinaryTree<T extends Comparable<? super T>> {
 
+	//Inner class Node
 	private class Node {
 		private T data;
 		private Node left;
@@ -38,6 +40,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
 		}
 	}
 
+	//Keep track of head node and size of tree
 	private Node root;
 	private int size;
 
@@ -50,6 +53,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
 		return size;
 	}
 
+	//public function used to insert data
 	public void insert(T new_data) {
 		if (root == null) {
 			root = new Node(new_data);
@@ -59,6 +63,7 @@ public class BinaryTree<T extends Comparable<? super T>> {
 		}
 	}
 
+	//recursively call nodes, find null node and insert data
 	private void insert_n(T new_data, Node ptr) {
 		int comparison = ptr.data.compareTo(new_data);
 		if(new_data == ptr.get_data()) return;
